@@ -26,10 +26,6 @@ reboot
 
 %packages --nobase
 @core
-
-# SELinux helpers
-setroubleshoot-server
-
 %end
 
 %post
