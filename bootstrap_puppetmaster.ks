@@ -44,7 +44,7 @@ restorecon -R ~ops/.ssh
 
 # Install Puppetmaster
 yum -y install http://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-7.noarch.rpm
-yum -y install puppetmaster puppet facter
+yum -y install puppet-server puppet facter
 
 %end
 
