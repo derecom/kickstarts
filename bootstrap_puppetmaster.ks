@@ -28,7 +28,6 @@ reboot
 @core
 
 # SELinux helpers
-setroubleshoot
 setroubleshoot-server
 
 %end
