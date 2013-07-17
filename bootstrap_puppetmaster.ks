@@ -35,9 +35,7 @@ echo "ops        ALL=(ALL)       NOPASSWD: ALL" >>/etc/sudoers.d/ops
 chmod 0440 /etc/sudoers.d/ops
 
 mkdir --mode=700 ~ops/.ssh
-echo "ssh-rsa
-AAAAB3NzaC1yc2EAAAADAQABAAABAQDMxMPne9PviTcZGv4cqglPhS98mNELf+dutJrbNSwZX46aUt/HbSx/nOX0i/9c0F5cNHek+y/tTa1myhnDfpIiYcuWtp+G79syQQn/5DUT0/qD6WX49YGKHGEDXaL6a7UvXxsfwcsEw8czMESXeErTg0+FLIKjYeHIcHWIJYuQ69wFKCcaBW4wCmT2fW5DAzldpYTjrK3miC4lLfnIf3nspJe/h1jcQHXOxbu4/OdYhfAL2zXroaw09CQGkV6Zyv7Bz1412ZRp1IHCZypJbv0gHtMyJMRGbZLWqm9vxxBhff9woMqIYiDTURXGdhLU0Om4h5MCQiN5+3P8zOnGJWvP
-ops@derecom.it" >> ~ops/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMxMPne9PviTcZGv4cqglPhS98mNELf+dutJrbNSwZX46aUt/HbSx/nOX0i/9c0F5cNHek+y/tTa1myhnDfpIiYcuWtp+G79syQQn/5DUT0/qD6WX49YGKHGEDXaL6a7UvXxsfwcsEw8czMESXeErTg0+FLIKjYeHIcHWIJYuQ69wFKCcaBW4wCmT2fW5DAzldpYTjrK3miC4lLfnIf3nspJe/h1jcQHXOxbu4/OdYhfAL2zXroaw09CQGkV6Zyv7Bz1412ZRp1IHCZypJbv0gHtMyJMRGbZLWqm9vxxBhff9woMqIYiDTURXGdhLU0Om4h5MCQiN5+3P8zOnGJWvP ops@derecom.it" >> ~ops/.ssh/authorized_keys
 chmod 0600 ~ops/.ssh/authorized_keys
 chown -R ops:ops ~ops/.ssh
 restorecon -R ~ops/.ssh
