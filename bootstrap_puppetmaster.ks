@@ -26,9 +26,16 @@ reboot
 
 %packages --nobase
 @core
+
+# SELinux helpers
+setroubleshoot
+setroubleshoot-server
+
 %end
 
 %post
+
+# Install default user
 /usr/bin/yum -y install sudo
 /usr/sbin/useradd ops -U -G wheel
 echo "ops        ALL=(ALL)       NOPASSWD: ALL" >>/etc/sudoers.d/ops
@@ -39,6 +46,10 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMxMPne9PviTcZGv4cqglPhS98mNELf+dutJ
 chmod 0600 ~ops/.ssh/authorized_keys
 chown -R ops:ops ~ops/.ssh
 restorecon -R ~ops/.ssh
+
+# Install Puppetmaster
+yum -y install http://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-7.noarch.rpm
+yum -y install puppetmaster puppet facter
 
 %end
 

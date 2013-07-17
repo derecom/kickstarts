@@ -26,9 +26,16 @@ reboot
 
 %packages --nobase
 @core
+
+# SELinux helpers
+setroubleshoot
+setroubleshoot-server
+
 %end
 
 %post
+
+# Install default user
 /usr/bin/yum -y install sudo
 /usr/sbin/useradd ops -U -G wheel
 echo "ops        ALL=(ALL)       NOPASSWD: ALL" >>/etc/sudoers.d/ops
