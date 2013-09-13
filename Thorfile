@@ -41,8 +41,8 @@ class Kickstart < Thor
     system "git checkout gh-pages"
     kickstarts.each do |ks|
       system "git checkout master -- #{ks}"
-      system "git add -u #{ks}"
     end
     system "git commit -m 'Kickstart catalog updated at #{Time.now.strftime('%Y-%m-%d')}"
+    system "git checkout master"
   end
 end
