@@ -43,6 +43,7 @@ class Kickstart < Thor
       system "git checkout master -- #{ks}"
     end
     system "git commit -m 'Kickstart catalog updated at #{Time.now.strftime('%Y-%m-%d')}'"
+    system "git push origin gh-pages"
     system "git checkout master"
   end
 end
