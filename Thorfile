@@ -33,4 +33,8 @@ class Kickstart < Thor
       ks << output
     end
   end
+
+  desc "publish", "Publish the kickstarts on GitHub Pages"
+  def publish
+  end
 end
