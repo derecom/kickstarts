@@ -36,5 +36,13 @@ class Kickstart < Thor
 
   desc "publish", "Publish the kickstarts on GitHub Pages"
   def publish
+    kickstarts = `git ls-tree -r --name-only master`.split.select { |f| f =~ /.ks$/ }
+
+    system "git checkout gh-pages"
+    kickstarts.each do |ks|
+      system "git checkout master -- #{ks}"
+      system "git add -u #{ks}"
+    end
+    system "git commit -m 'Kickstart catalog updated at #{Time.now.strftime('%Y-%m-%d')}"
   end
 end
